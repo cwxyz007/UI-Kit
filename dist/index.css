@@ -321,27 +321,43 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
   margin: 0;
 }
+#common .border {
+  border: 1px solid #d7d7d7;
+}
+#common .border:hover {
+  border: 1px solid #73baff;
+}
+#common .border:focus {
+  border: 1px solid #59aeff;
+}
 .input,
 input {
+  border: 1px solid #d7d7d7;
   outline: none;
   padding: 2px;
-  border: 1px solid #d7d7d7;
   transition: border ease 0.4s;
   margin: 0 4px;
   width: 200px;
+}
+.input:hover,
+input:hover {
+  border: 1px solid #73baff;
 }
 .input:focus,
 input:focus {
   border: 1px solid #59aeff;
 }
 textarea {
+  border: 1px solid #d7d7d7;
   outline: none;
   margin: 0;
   padding: 0;
-  border: 1px solid #d7d7d7;
   transition: border ease 0.4s;
   min-height: 2em;
   resize: none;
+}
+textarea:hover {
+  border: 1px solid #73baff;
 }
 textarea:focus {
   border: 1px solid #59aeff;
@@ -349,17 +365,26 @@ textarea:focus {
 .button,
 input[type='button'],
 button {
+  border: 1px solid #d7d7d7;
   outline: none;
   padding: 2px 15px;
   margin: 0 4px;
   transition: border ease 0.4s, background-color ease 0.4s;
-  border: 1px solid #d7d7d7;
   background-color: #e1e1e1;
 }
 .button:hover,
 input[type='button']:hover,
 button:hover {
+  border: 1px solid #73baff;
+}
+.button:focus,
+input[type='button']:focus,
+button:focus {
   border: 1px solid #59aeff;
+}
+.button:hover,
+input[type='button']:hover,
+button:hover {
   background-color: #f2f9ff;
 }
 .button:active,
@@ -367,11 +392,6 @@ input[type='button']:active,
 button:active {
   border: 1px solid #59aeff;
   background-color: #d9ecff;
-}
-.button:focus,
-input[type='button']:focus,
-button:focus {
-  border: 1px solid #59aeff;
 }
 .button:disabled:hover,
 input[type='button']:disabled:hover,
@@ -425,25 +445,27 @@ input[type='checkbox']:disabled + label.checkbox:hover {
   cursor: not-allowed;
 }
 select {
+  border: 1px solid #d7d7d7;
   outline: none;
   padding: 2px 15px;
   transition: border ease 0.4s, background-color ease 0.4s;
-  border: 1px solid #d7d7d7;
   background-color: #e1e1e1;
   padding: 2px;
   margin: 0 4px;
   min-width: 180px;
 }
 select:hover {
+  border: 1px solid #73baff;
+}
+select:focus {
   border: 1px solid #59aeff;
+}
+select:hover {
   background-color: #f2f9ff;
 }
 select:active {
   border: 1px solid #59aeff;
   background-color: #d9ecff;
-}
-select:focus {
-  border: 1px solid #59aeff;
 }
 select:disabled:hover {
   border: 1px solid #d7d7d7;
