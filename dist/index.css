@@ -330,6 +330,9 @@ input::-webkit-inner-spin-button {
 #common .border:focus {
   border: 1px solid #59aeff;
 }
+#common .border:disabled:hover {
+  border: 1px solid #d7d7d7;
+}
 input,
 label,
 button,
@@ -353,6 +356,10 @@ input:hover {
 input:focus {
   border: 1px solid #59aeff;
 }
+.input:disabled:hover,
+input:disabled:hover {
+  border: 1px solid #d7d7d7;
+}
 textarea {
   border: 1px solid #d7d7d7;
   outline: none;
@@ -365,6 +372,9 @@ textarea:hover {
 }
 textarea:focus {
   border: 1px solid #59aeff;
+}
+textarea:disabled:hover {
+  border: 1px solid #d7d7d7;
 }
 .button,
 input[type='button'],
@@ -384,6 +394,11 @@ button:hover {
 input[type='button']:focus,
 button:focus {
   border: 1px solid #59aeff;
+}
+.button:disabled:hover,
+input[type='button']:disabled:hover,
+button:disabled:hover {
+  border: 1px solid #d7d7d7;
 }
 .button:hover,
 input[type='button']:hover,
@@ -461,6 +476,9 @@ select:hover {
 }
 select:focus {
   border: 1px solid #59aeff;
+}
+select:disabled:hover {
+  border: 1px solid #d7d7d7;
 }
 select:hover {
   background-color: #f2f9ff;
