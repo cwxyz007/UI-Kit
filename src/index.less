@@ -1,0 +1,210 @@
+@import './normalize.less';
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+
+* {
+  user-select: none;
+  font-family: 'Fira Code', monospace;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+html,
+body {
+  font-size: 16px;
+  line-height: 1.2em;
+}
+
+@color-blue: #59aeff;
+@color-gray: #f0f0f0;
+@color-border: darken(@color-gray, 10%);
+@color-bg: #e1e1e1;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+.input,
+input {
+  outline: none;
+  padding: 2px;
+  border: 1px solid @color-border;
+  transition: border ease 0.4s;
+  margin: 0 4px;
+  width: 200px;
+
+  &:focus {
+    border: 1px solid @color-blue;
+  }
+}
+
+textarea {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid @color-border;
+  transition: border ease 0.4s;
+  min-height: 2em;
+  resize: none;
+
+  &:focus {
+    border: 1px solid @color-blue;
+  }
+}
+
+.button,
+input[type='button'],
+button {
+  outline: none;
+  padding: 2px 15px;
+  margin: 0 4px;
+  transition: all ease 0.4s;
+  border: 1px solid @color-border;
+  background-color: @color-bg;
+
+  &:hover {
+    border: 1px solid @color-blue;
+    background-color: lighten(@color-blue, 30%);
+  }
+
+  &:active {
+    border: 1px solid @color-blue;
+    background-color: lighten(@color-blue, 25%);
+  }
+
+  &:focus {
+    border: 1px solid @color-blue;
+  }
+
+  &:disabled {
+    &:hover {
+      border: 1px solid @color-border;
+      background-color: @color-bg;
+    }
+  }
+}
+
+input[type='checkbox'] {
+  display: none;
+
+  + label.checkbox {
+    padding-left: 17px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border: 1px solid @color-border;
+      transform: translateY(-50%);
+      transition: border ease 0.4s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 2px;
+      height: 5px;
+      border: 2px solid @color-blue;
+      border-color: transparent;
+      transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
+    }
+
+    &:hover {
+      &::before {
+        border: 1px solid @color-blue;
+      }
+    }
+  }
+
+  &:checked {
+    + label.checkbox {
+      &::before {
+        border: 1px solid @color-blue;
+      }
+      &::after {
+        border-color: transparent @color-blue @color-blue transparent;
+      }
+    }
+  }
+
+  &:disabled {
+    + label.checkbox {
+      &::before {
+        border: 1px solid @color-border;
+        background: darken(@color-bg, 1%);
+      }
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+select {
+  .button;
+  padding: 2px;
+  margin: 0 4px;
+  min-width: 180px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  > * {
+    flex: 1;
+  }
+}
+
+.row + .row {
+  margin-top: 10px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0;
+}
+
+.container-box {
+  position: relative;
+  margin: 15px;
+  padding: 15px 10px;
+  border: 1px solid rgb(214, 214, 214);
+
+  &::before {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, -50%);
+    background: inherit;
+    padding: 0 2px;
+  }
+
+  &.align-right {
+    .row > label {
+      text-align: right;
+    }
+
+    .row > label.checkbox {
+      text-align: left;
+    }
+  }
+}
+
+body,
+html,
+div {
+  background-color: @color-gray;
+}
