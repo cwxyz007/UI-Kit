@@ -330,13 +330,19 @@ input::-webkit-inner-spin-button {
 #common .border:focus {
   border: 1px solid #59aeff;
 }
+input,
+label,
+button,
+textarea,
+select {
+  margin: 0 4px;
+}
 .input,
 input {
   border: 1px solid #d7d7d7;
   outline: none;
   padding: 2px;
   transition: border ease 0.4s;
-  margin: 0 4px;
   width: 200px;
 }
 .input:hover,
@@ -350,8 +356,6 @@ input:focus {
 textarea {
   border: 1px solid #d7d7d7;
   outline: none;
-  margin: 0;
-  padding: 0;
   transition: border ease 0.4s;
   min-height: 2em;
   resize: none;
@@ -368,7 +372,6 @@ button {
   border: 1px solid #d7d7d7;
   outline: none;
   padding: 2px 15px;
-  margin: 0 4px;
   transition: border ease 0.4s, background-color ease 0.4s;
   background-color: #e1e1e1;
 }
@@ -451,7 +454,6 @@ select {
   transition: border ease 0.4s, background-color ease 0.4s;
   background-color: #e1e1e1;
   padding: 2px;
-  margin: 0 4px;
   min-width: 180px;
 }
 select:hover {

@@ -41,21 +41,26 @@ input::-webkit-inner-spin-button {
   }
 }
 
+input,
+label,
+button,
+textarea,
+select {
+  margin: 0 4px;
+}
+
 .input,
 input {
   #common > .border;
   outline: none;
   padding: 2px;
   transition: border ease 0.4s;
-  margin: 0 4px;
   width: 200px;
 }
 
 textarea {
   #common > .border;
   outline: none;
-  margin: 0;
-  padding: 0;
   transition: border ease 0.4s;
   min-height: 2em;
   resize: none;
@@ -67,7 +72,6 @@ button {
   #common > .border;
   outline: none;
   padding: 2px 15px;
-  margin: 0 4px;
   transition: border ease 0.4s, background-color ease 0.4s;
   background-color: @color-bg;
 
@@ -154,7 +158,6 @@ input[type='checkbox'] {
 select {
   .button;
   padding: 2px;
-  margin: 0 4px;
   min-width: 180px;
 }
 
