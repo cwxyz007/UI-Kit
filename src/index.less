@@ -16,6 +16,7 @@ body {
   line-height: 1.2em;
 }
 
+@color-white: #ffffff;
 @color-blue: #59aeff;
 @color-gray: #f0f0f0;
 @color-border: darken(@color-gray, 10%);
@@ -42,6 +43,13 @@ input::-webkit-inner-spin-button {
     &:disabled:hover {
       border: 1px solid @color-border;
     }
+  }
+
+  .ab-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -169,6 +177,7 @@ select {
   display: flex;
   align-items: center;
   margin: 4px 0;
+
   > * {
     flex: 1;
   }
@@ -207,6 +216,110 @@ select {
 
     .row > label.checkbox {
       text-align: left;
+    }
+  }
+}
+
+.container-list {
+  @tools-size: 24px;
+
+  border: 1px solid @color-border;
+  background: @color-white;
+  position: relative;
+  padding: 1px;
+  padding-bottom: @tools-size + 2px;
+
+  .list-items {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .list-item {
+      padding: 2px 3px;
+
+      transition: 0.2s ease;
+      transition-property: background color;
+
+      &:hover {
+        background: lighten(@color-blue, 10%);
+      }
+
+      &:active {
+        background: lighten(@color-blue, 5%);
+      }
+
+      &.selected {
+        background: @color-blue;
+      }
+    }
+  }
+
+  .list-tools {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    display: flex;
+
+    .list-tool {
+      margin: 0;
+      padding: 0;
+      width: @tools-size;
+      height: @tools-size;
+      position: relative;
+
+      @tool-height: 2px;
+      @tool-width: 60%;
+
+      &.list-add {
+        &::after,
+        &::before {
+          #common .ab-center;
+          content: '';
+          width: @tool-width;
+          height: @tool-height;
+          background: @color-blue;
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+
+      &.list-remove {
+        &::before {
+          #common .ab-center;
+          content: '';
+          width: @tool-width;
+          height: @tool-height;
+          background: @color-blue;
+        }
+      }
+
+      &.list-duplicate {
+        @tool-size: 10px;
+        @offset-delta: 7%;
+
+        &::after,
+        &::before {
+          #common .ab-center;
+          content: '';
+          width: @tool-size;
+          height: @tool-size;
+          border-radius: 50%;
+          border: 1px solid @color-blue;
+        }
+
+        &::before {
+          top: 50% + @offset-delta;
+          left: 50% + @offset-delta;
+          background: @color-blue;
+        }
+
+        &::after {
+          top: 50% - @offset-delta;
+          left: 50% - @offset-delta;
+        }
+      }
     }
   }
 }

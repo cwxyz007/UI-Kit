@@ -18,14 +18,25 @@ gulp.task('server', () => {
   })
 })
 
-gulp.task('watch', () => {
+gulp.task('watch:less', () => {
   return gulp.watch(
-    './src/**/*.less',
+    ['./src/**/*.less'],
     {
-      delay: '200',
+      delay: 200,
     },
     gulp.task('less'),
   )
 })
 
-gulp.task('default', gulp.series('less', gulp.parallel('watch', 'server')))
+gulp.task('watch:html', () => {
+  return gulp
+    .watch(['./*.html'], {
+      delay: 200,
+    })
+    .on('change', browserSync.reload)
+})
+
+gulp.task(
+  'default',
+  gulp.series('less', gulp.parallel('watch:less', 'watch:html', 'server')),
+)
