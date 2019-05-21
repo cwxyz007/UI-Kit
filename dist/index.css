@@ -5,7 +5,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
 html {
   line-height: 1.15;
   /* 1 */
@@ -304,17 +303,8 @@ template {
 [hidden] {
   display: none;
 }
-* {
-  user-select: none;
-  font-family: 'Fira Code', monospace;
-}
 *:disabled {
   cursor: not-allowed;
-}
-html,
-body {
-  font-size: 16px;
-  line-height: 1.2em;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
