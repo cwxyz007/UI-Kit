@@ -1,7 +1,7 @@
 {
   "name": "ui-kit",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.less",
   "license": "MIT",
   "scripts": {
     "dev": "gulp",
