@@ -10,7 +10,7 @@ gulp.task('less', () => {
     .pipe(browserSync.stream())
 })
 
-gulp.task('server', () => {
+gulp.task('serve', () => {
   browserSync.init({
     server: {
       baseDir: './',
@@ -38,5 +38,5 @@ gulp.task('watch:html', () => {
 
 gulp.task(
   'default',
-  gulp.series('less', gulp.parallel('watch:less', 'watch:html', 'server')),
+  gulp.series('less', gulp.parallel('watch:less', 'watch:html', 'serve')),
 )
